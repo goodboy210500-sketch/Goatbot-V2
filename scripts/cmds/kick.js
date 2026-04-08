@@ -18,8 +18,7 @@ module.exports = {
 
 	langs: {
 		vi: {
-			needAdmin: "Vui lòng thêm quản trị viên cho bot trước khi sử dụng tính năng này"
-		},
+			needAdmin: "[ SUPER STUDIO ] ➜ Vui lòng thêm robot làm quản trị viên nhóm để thực thi lệnh!"
 		en: {
 			needAdmin: "Please add admin for bot before using this feature"
 		}
@@ -32,7 +31,7 @@ module.exports = {
 		async function kickAndCheckError(uid) {
 			try {
 				await api.removeUserFromGroup(uid, event.threadID);
-			}
+			message.reply("[ SUPER STUDIO ] ➜ Đã thực thi trục xuất thành viên vi phạm.");
 			catch (e) {
 				message.reply(getLang("needAdmin"));
 				return "ERROR";
